@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Royan</title>
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
+	<link rel="stylesheet" type="text/css" href="css/fontawesome.css">
+	<link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Montserrat:400,600&amp;subset=vietnamese" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" ></script> -->
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        // Instantiate the Bootstrap carousel
+        $('.multi-item-carousel').carousel({
+            interval: false
+        });
+
+        // for every slide in carousel, copy the next slide's item in the slide.
+        // Do the same for the next, next item.
+        $('.multi-item-carousel .item').each(function() {
+            var next = $(this).next();
+            if (!next.length) {
+                next = $(this).siblings(':first');
+            }
+            next.children(':first-child').clone().appendTo($(this));
+
+            if (next.next().length > 0) {
+                next.next().children(':first-child').clone().appendTo($(this));
+            } else {
+                $(this).siblings(':first').children(':first-child').clone().appendTo($(this));
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <header id="header" class="container" style="height: 140px; ">
+
+        <div class="row h-100">
+
+            <div class="col my-auto">
+                <div class="d-flex align-items-center">
+                    <img src="images/call.png" class="float-left">
+                    <b style="padding-left: 15px; font-size: 13px;">CALL US<br> <b style="color: #91af2b;font-size: 21px;">123 - 456 - 7899</b></b>
+                </div>
+
+            </div>
+            <div class="col my-auto">
+                <img src="images/logo.png" class="mx-auto d-block ">
+            </div>
+            <div class="col my-auto">
+
+                <img src="images/bag.png" class="float-right">
+                <img src="images/heart.png" class="float-right">
+            </div>
+        </div>
+
+    </header>
+    <!-- /header -->
+    <hr class="container my-0" color="#ebebeb" />
+
+    <div class="container-fluid py-1 px-0">
+        <!-- menu -->
+        <div id="menu">
+            <nav class="navbar navbar-expand-sm py-0 my-auto justify-content-center ">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#">HOME</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Link 1</a>
+                            <a class="dropdown-item" href="#">Link 2</a>
+                            <a class="dropdown-item" href="#">Link 3</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">ABOUT US</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="#">OUR PRODUCTS</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#">BLOG</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Link 1</a>
+                            <a class="dropdown-item" href="#">Link 2</a>
+                            <a class="dropdown-item" href="#">Link 3</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#">PAGE</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Link 1</a>
+                            <a class="dropdown-item" href="#">Link 2</a>
+                            <a class="dropdown-item" href="#">Link 3</a>
+                        </div>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="#">CONTACT</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <!--slide -->
+        <!-- <div id="slide" class="carousel slide multi-item-carousel" data-ride="carousel" style=" background: #fbfbfb;">
+			<div class="carousel-inner" role="listbox">
+				<div class="item active ">
+					<div class="col-4">
+
+						<div id="captop" class="carousel-caption ">
+							<p class="captionpic">Fresh and Delicious</p>
+							<p>Organic fruits, vegetables, and <br>lot more to your door.</p>
+							<a href="#">SHOP NOW</a>
+						</div>   
+						<img class="mx-auto d-block" src="images/pic1.png" >
+					</div>	
+				</div>
+				<div class="item  ">
+					<div class="col-4">
+						<img class="mx-auto d-block" src="images/pic2.png" >
+						<div id="capbot" class="carousel-caption ">
+							<p class="captionpic">Vegetable Market</p>
+							<p>Organic fruits, vegetables, and <br>lot more to your door.</p>
+							<a href="#">SHOP NOW</a>
+						</div>    
+					</div>	
+				</div>
+				<div class="item  ">
+					<div class="col-4">
+						<img class="mx-auto d-block" src="images/pic3.png" >
+						<div id="captop" class="carousel-caption ">
+							<p class="captionpic">Real Quality farm-grown products</p>
+							<p>Organic fruits, vegetables, and <br>lot more to your door.</p>
+							<a href="#">SHOP NOW</a>
+						</div>     
+					</div>	
+				</div>
+				<div class="item  ">
+					<div class="col-4">
+						<img class="mx-auto d-block" src="images/pic2.png" >
+						<div id="capbot" class="carousel-caption ">
+							<p class="captionpic">Fresh and Delicious</p>
+							<p>Organic fruits, vegetables, and <br>lot more to your door.</p>
+							<a href="#">SHOP NOW</a>
+						</div>  
+					</div>	
+				</div>
+
+				<a class="left carousel-control" href="#theCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+				<a class="right carousel-control" href="#theCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+			</div>
+		</div> -->
+
+        <div id="slide" class="carousel slide" data-ride="carousel">
+
+            <!-- Indicators -->
+            <ul class="carousel-indicators">
+                <li data-target="#slide" data-slide-to="0" class="active"></li>
+                <li data-target="#slide" data-slide-to="1"></li>
+                <li data-target="#slide" data-slide-to="2"></li>
+            </ul>
+
+            <!-- The slideshow -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div>
+
+                        <div id="captop" class="carousel-caption ">
+                            <p class="captionpic">Fresh and Delicious</p>
+                            <p>Organic fruits, vegetables, and
+                                <br>lot more to your door.</p>
+                            <a href="#">SHOP NOW</a>
+                        </div>
+                        <img class="mx-auto d-block" src="images/pic1.png">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div>
+                        <img class="mx-auto d-block" src="images/pic2.png">
+                        <div id="capbot" class="carousel-caption ">
+                            <p class="captionpic">Vegetable Market</p>
+                            <p>Organic fruits, vegetables, and
+                                <br>lot more to your door.</p>
+                            <a href="#">SHOP NOW</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div>
+                        <img class="mx-auto d-block" src="images/pic3.png">
+                        <div id="captop" class="carousel-caption ">
+                            <p class="captionpic">Real Quality farm-grown products</p>
+                            <p>Organic fruits, vegetables, and
+                                <br>lot more to your door.</p>
+                            <a href="#">SHOP NOW</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div>
+                        <img class="mx-auto d-block" src="images/pic2.png">
+                        <div id="capbot" class="carousel-caption ">
+                            <p class="captionpic">Fresh and Delicious</p>
+                            <p>Organic fruits, vegetables, and
+                                <br>lot more to your door.</p>
+                            <a href="#">SHOP NOW</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="carousel-control-prev" href="#slide" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#slide" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        </div>
+
+        <!-- offer -->
+        <div id="offer" class="container" style="background: #fff;">
+            <div id="grid" class="col" style="padding: 150px 0;">
+                <div id="row1" class="row">
+                    <div class="col-12">
+                        <p class="text-uppercase">OUR PRODUCTS</p>
+                        <p class="text-capitalize">what we offer</p>
+
+                    </div>
+                </div>
+                <div id="row2" class="row">
+                    <div class="col-md-4">
+                        <div class="col1">
+                            <img class="mx-auto d-block" src="images/icon1.png">
+                            <p class="vegetables" style="color: #000; font-size: 18px; padding-top:40px; line-height: 1.5;">Vegetables</p>
+                            <p>Donec nec justo eget felis facilisis</p>
+                            <p>ferrmentum. Aliquam porttior </p>
+                            <p>mauris sit amet orci</p>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4 ">
+                        <div class="col2">
+                            <img class="mx-auto d-block" src="images/icon2.png">
+                            <p class="vegetables" style="color: #000; font-size: 18px; padding-top:40px; line-height: 1.5;">Vegetables</p>
+                            <p>Donec nec justo eget felis facilisis</p>
+                            <p>ferrmentum. Aliquam porttior </p>
+                            <p>mauris sit amet orci</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 ">
+                        <div class="col3">
+                            <img class="mx-auto d-block" src="images/icon3.png">
+                            <p class="vegetables" style="color: #000; font-size: 18px; padding-top:40px; line-height: 1.5;">Vegetables</p>
+                            <p>Donec nec justo eget felis facilisis</p>
+                            <p>ferrmentum. Aliquam porttior </p>
+                            <p>mauris sit amet orci</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="row3" class="row" style="padding: 200px 0;">
+                    <div class="col-md-4">
+                        <div class="col4">
+                            <img class="mx-auto d-block" src="images/icon4.png">
+                            <p class="vegetables" style="color: #000; font-size: 18px; padding-top:40px; line-height: 1.5;">Vegetables</p>
+                            <p>Donec nec justo eget felis facilisis</p>
+                            <p>ferrmentum. Aliquam porttior </p>
+                            <p>mauris sit amet orci</p>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4 ">
+                        <div class="col5">
+                            <img class="mx-auto d-block" src="images/icon5.png">
+                            <p class="vegetables" style="color: #000; font-size: 18px; padding-top:40px; line-height: 1.5;">Vegetables</p>
+                            <p>Donec nec justo eget felis facilisis</p>
+                            <p>ferrmentum. Aliquam porttior </p>
+                            <p>mauris sit amet orci</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 ">
+                        <div class="col6">
+                            <img class="mx-auto d-block" src="images/icon6.png">
+                            <p class="vegetables" style="color: #000; font-size: 18px; padding-top:40px; line-height: 1.5;">Vegetables</p>
+                            <p>Donec nec justo eget felis facilisis</p>
+                            <p>ferrmentum. Aliquam porttior </p>
+                            <p>mauris sit amet orci</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- banner -->
+            <!-- banner -->
+        </div>
+        <div id="banner" class="row" style=" background: #f4f4f4; ">
+            <div class="col-6">
+                <div class="bannercontent">
+                    <p class="text-uppercase">great veggie lovers</p>
+                    <p class="text-capitalize">everyday usage</p>
+                    <p class="normal">Yep! You are in the right place and don't waste your</p>
+                    <button type="button" class="btn"><a href="#">SHOP NOW</a></button>
+                </div>
+            </div>
+            <div class="col-6">
+                <img class="mx-auto d-block" src="images/banner.png">
+            </div>
+        </div>
+        <!-- product -->
+        <div id="product" class="container">
+            <div class="featured text-center" style="padding-top:150px;">
+                <p class="text-uppercase" style="font-size:19px; color:#94c347 ">OUR PRODUCTS</p>
+                <p class="text-capitalize" style="font-size: 60px; color: #000">featured products</p>
+                <div class="menuproduct">
+                    <nav class="navbar navbar-expand-sm justify-content-center ">
+                        <ul class="navbar-nav">
+                            <li class="nav-item active"><a class="nav-link" href="#">Vegetable</a></li>
+                            <li class="nav-item active"><a class="nav-link" href="#">Meat</a></li>
+                            <li class="nav-item active"><a class="nav-link" href="#">Fruit</a></li>
+                            <li class="nav-item active"><a class="nav-link" href="#">Organic Food</a></li>
+
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="row" style="padding-top: 80px;">
+                <div class="col-md-6">
+                    <img class="mx-auto d-block" src="images/strawberry.png">
+                </div>
+                <div class="col-md-6">
+                    <img class="mx-auto d-block" src="images/orderdaily.png">
+                </div>
+            </div>
+            <div class="row" style="padding: 80px 0;">
+                <div class="col-md-3">
+                    <div style="height: 50%;">
+                        <img class="mx-auto d-block" src="images/otchuong.png">
+
+                    </div>
+                    <div style="text-align: center;">
+                        <p class="text-capitalize" style="font-size:24px; color: #000;">Trius Cabernet Frane 2015</p>
+                        <p class="text-uppercase" style="font-size: 32px; color:#91af2b ">$129.55</p>
+                    </div>
+                    <button type="button" class="addtocart" class="btn"><a href="#">ADD TO CART</a></button>
+                </div>
+                <div class="col-md-3">
+                    <div style="height: 50%;">
+                        <img class="mx-auto d-block" src="images/caixanh.png">
+
+                    </div>
+                    <div style="text-align: center;">
+                        <p class="text-capitalize" style="font-size:24px; color: #000;">Trius Cabernet Frane 2015</p>
+                        <p class="text-uppercase" style="font-size: 32px; color:#91af2b ">$129.55</p>
+                    </div>
+                    <button type="button" class="addtocart" class="btn"><a href="#">ADD TO CART</a></button>
+                </div>
+                <div class="col-md-3">
+                    <div style="height: 50%;">
+                        <img class="mx-auto d-block" src="images/carot.png">
+
+                    </div>
+                    <div style="text-align: center;">
+                        <p class="text-capitalize" style="font-size:24px; color: #000;">Trius Cabernet Frane 2015</p>
+                        <p class="text-uppercase" style="font-size: 32px; color:#91af2b ">$129.55</p>
+                    </div>
+                    <button type="button" class="addtocart" class="btn"><a href="#">ADD TO CART</a></button>
+                </div>
+
+                <div class="col-md-3">
+                    <div style="height: 50%;">
+                        <img class="mx-auto d-block" src="images/cucaido.png">
+
+                    </div>
+                    <div style="text-align: center;">
+                        <p class="text-capitalize" style="font-size:24px; color: #000;">Trius Cabernet Frane 2015</p>
+                        <p class="text-uppercase" style="font-size: 32px; color:#91af2b ">$129.55</p>
+                    </div>
+                    <button type="button" class="addtocart" class="btn"><a href="#">ADD TO CART</a></button>
+                </div>
+
+            </div>
+        </div>
+        <!-- feedback -->
+        <div id="feedback" class="carousel slide" data-ride="carousel" style="height: 767px; background-image: url(images/backgroundfb.png); background-position: center; ">
+            <div class="carousel-inner">
+                <div class="carousel-item">
+                    <div>
+                        <p class="comment">“It was my first time at Royal Winery for me and my friends. Was a great time and the staff are great."</p>
+                        <img src="" alt="avatar">
+                        <p class="customername">Emma Walson</p>
+                        <p>Customer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- newproduct -->
+        <div id="newproduct" class="container">
+            <div class=" text-center" style="padding-top:150px;">
+                <p class="text-uppercase" style="font-size:19px; color:#94c347 ">OUR PRODUCTS</p>
+                <p class="text-capitalize" style="font-size: 60px; color: #000">new products</p>
+            </div>
+            <div class="row" style="padding: 80px 0;">
+                <div class="col-md-4">
+                    <div style="height: 50%;">
+                        <img class="mx-auto d-block" src="images/otchuong.png">
+
+                    </div>
+                    <div style="text-align: center;">
+                        <p class="text-capitalize" style="font-size:24px; color: #000;">Trius Cabernet Frane 2015</p>
+                        <p class="text-uppercase" style="font-size: 32px; color:#91af2b ">$129.55</p>
+                    </div>
+                    <button type="button" class="addtocart" class="btn"><a href="#">ADD TO CART</a></button>
+                </div>
+                <div class="col-md-4">
+                    <div style="height: 50%;">
+                        <img class="mx-auto d-block" src="images/caixanh.png">
+
+                    </div>
+                    <div style="text-align: center;">
+                        <p class="text-capitalize" style="font-size:24px; color: #000;">Trius Cabernet Frane 2015</p>
+                        <p class="text-uppercase" style="font-size: 32px; color:#91af2b ">$129.55</p>
+                    </div>
+                    <button type="button" class="addtocart" class="btn"><a href="#">ADD TO CART</a></button>
+                </div>
+                <div class="col-md-4">
+                    <div style="height: 50%;">
+                        <img class="mx-auto d-block" src="images/carot.png">
+
+                    </div>
+                    <div style="text-align: center;">
+                        <p class="text-capitalize" style="font-size:24px; color: #000;">Trius Cabernet Frane 2015</p>
+                        <p class="text-uppercase" style="font-size: 32px; color:#91af2b ">$129.55</p>
+                    </div>
+                    <button type="button" class="addtocart" class="btn"><a href="#">ADD TO CART</a></button>
+                </div>
+
+            </div>
+        </div>
+        <!-- blog -->
+        <div id="blog" style=" background: #f4f4f4;">
+            <div class=" text-center" style="padding-top:150px;">
+                <p class="text-uppercase" style="font-size:19px; color:#94c347 ">from our blog</p>
+                <p class="text-capitalize" style="font-size: 60px; color: #000">latest news</p>
+            </div>
+            <div class="row" style="padding: 100px 0;">
+                <div class="col-md-6">
+                    <a href="#"><img class="mx-auto d-block" src="images/new1.png"></a>
+
+                </div>
+                <div class="col-md-6">
+                    <a href="#"><img class="mx-auto d-block" src="images/new2.png"></a>
+                </div>
+            </div>
+
+        </div>
+        <!-- more -->
+        <div id="more" class="container" style=" background: #ffffff;">
+            <div style="padding: 150px 0;">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="col1">
+                            <img class="mx-auto d-block" src="images/iconship.png">
+                            <p class="vegetables" style="color: #000; font-size: 18px; padding-top:40px; line-height: 1.5;">Vegetables</p>
+                            <p>Donec nec justo eget felis facilisis</p>
+                            <p>ferrmentum. Aliquam porttior </p>
+                            <p>mauris sit amet orci</p>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4 ">
+                        <div class="col2">
+                            <img class="mx-auto d-block" src="images/icondeal.png">
+                            <p class="vegetables" style="color: #000; font-size: 18px; padding-top:40px; line-height: 1.5;">Vegetables</p>
+                            <p>Donec nec justo eget felis facilisis</p>
+                            <p>ferrmentum. Aliquam porttior </p>
+                            <p>mauris sit amet orci</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 ">
+                        <div class="col3">
+                            <img class="mx-auto d-block" src="images/iconhelp.png">
+                            <p class="vegetables" style="color: #000; font-size: 18px; padding-top:40px; line-height: 1.5;">Vegetables</p>
+                            <p>Donec nec justo eget felis facilisis</p>
+                            <p>ferrmentum. Aliquam porttior </p>
+                            <p>mauris sit amet orci</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- instagram -->
+        <!-- form -->
+        <div id="form" style="background: white;">
+            <div style="padding: 150px 0;" class="mx-auto d-block">
+                <div>
+                    <p class="text-capitalize" style="font-size:60px; text-align: center;">get in touch</p>
+                </div>
+                <div class="forminfo">
+                    <form action="/action_page.php" class="needs-validation" novalidate>
+                        <div class="form-group">
+                            <label for="uname">Name</label>
+                            <input type="text" class="form-control" id="uname" name="uname" required>
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill out this field.</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="pwd">Email</label>
+                            <input type="text" class="form-control" id="email" name="pswd" required>
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill out this field.</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="pwd">Message</label>
+                            <input type="text" class="form-control" id="message" name="pswd" required>
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill out this field.</div>
+                        </div>
+                        <button type="submit" class="btn" style="width: 30%;">SEND MESSAGE</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- footer -->
+        <div id="footer" style="margin-top: 200px; background: #24292d;">
+            <div class="container" style="height: 150px;">
+                <div class="row h-100" style="font-size:11px; color: #8d8d8e">
+                    <div class="col my-auto">
+                        <div class="d-flex align-items-center">
+                            <img src="images/iconlocal.png" style="height: 40px; width: 20px;" class="float-left">
+                            <p style=" padding-left: 10px;">12356 Glassford Street Glasgow
+                                <br>New York, USA</p>
+                        </div>
+
+                    </div>
+                    <div class="col my-auto">
+                        <img src="images/logo.png" class="mx-auto d-block ">
+                    </div>
+                    <div class="col my-auto">
+                        <p>Copyright © 2018 Theme.
+                            <br> All Rights Reserved. </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
