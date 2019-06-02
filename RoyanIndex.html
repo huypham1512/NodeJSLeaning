@@ -19,28 +19,35 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript">
-        // Instantiate the Bootstrap carousel
-        $('.multi-item-carousel').carousel({
-            interval: false
+    <script>
+        $(document).ready(function(){
+          // Activate the Carousel, but pause it from the start
+          $("#slide").carousel("cycle");
+                
+          
+          // Enable Carousel Indicators
+          $(".item1").click(function(){
+            $("#slide").carousel(0);
+          });
+          $(".item2").click(function(){
+            $("#slide").carousel(1);
+          });
+          $(".item3").click(function(){
+            $("#slide").carousel(2);
+          });
+          $(".item4").click(function(){
+            $("#slide").carousel(3);
+          });
+            
+          // Enable Carousel Controls
+          $(".carousel-control-prev").click(function(){
+            $("#slide").carousel("prev");
+          });
+          $(".carousel-control-next").click(function(){
+            $("#slide").carousel("next");
+          });
         });
-
-        // for every slide in carousel, copy the next slide's item in the slide.
-        // Do the same for the next, next item.
-        $('.multi-item-carousel .item').each(function() {
-            var next = $(this).next();
-            if (!next.length) {
-                next = $(this).siblings(':first');
-            }
-            next.children(':first-child').clone().appendTo($(this));
-
-            if (next.next().length > 0) {
-                next.next().children(':first-child').clone().appendTo($(this));
-            } else {
-                $(this).siblings(':first').children(':first-child').clone().appendTo($(this));
-            }
-        });
-    </script>
+        </script>
 </head>
 
 <body>
@@ -110,64 +117,16 @@
                 </ul>
             </nav>
         </div>
-        <!--slide -->
-        <!-- <div id="slide" class="carousel slide multi-item-carousel" data-ride="carousel" style=" background: #fbfbfb;">
-			<div class="carousel-inner" role="listbox">
-				<div class="item active ">
-					<div class="col-4">
 
-						<div id="captop" class="carousel-caption ">
-							<p class="captionpic">Fresh and Delicious</p>
-							<p>Organic fruits, vegetables, and <br>lot more to your door.</p>
-							<a href="#">SHOP NOW</a>
-						</div>   
-						<img class="mx-auto d-block" src="images/pic1.png" >
-					</div>	
-				</div>
-				<div class="item  ">
-					<div class="col-4">
-						<img class="mx-auto d-block" src="images/pic2.png" >
-						<div id="capbot" class="carousel-caption ">
-							<p class="captionpic">Vegetable Market</p>
-							<p>Organic fruits, vegetables, and <br>lot more to your door.</p>
-							<a href="#">SHOP NOW</a>
-						</div>    
-					</div>	
-				</div>
-				<div class="item  ">
-					<div class="col-4">
-						<img class="mx-auto d-block" src="images/pic3.png" >
-						<div id="captop" class="carousel-caption ">
-							<p class="captionpic">Real Quality farm-grown products</p>
-							<p>Organic fruits, vegetables, and <br>lot more to your door.</p>
-							<a href="#">SHOP NOW</a>
-						</div>     
-					</div>	
-				</div>
-				<div class="item  ">
-					<div class="col-4">
-						<img class="mx-auto d-block" src="images/pic2.png" >
-						<div id="capbot" class="carousel-caption ">
-							<p class="captionpic">Fresh and Delicious</p>
-							<p>Organic fruits, vegetables, and <br>lot more to your door.</p>
-							<a href="#">SHOP NOW</a>
-						</div>  
-					</div>	
-				</div>
-
-				<a class="left carousel-control" href="#theCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
-				<a class="right carousel-control" href="#theCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
-			</div>
-		</div> -->
-
-        <div id="slide" class="carousel slide" data-ride="carousel">
+        <div id="slide" class="carousel slide mt-4" data-interval="500">
 
             <!-- Indicators -->
             <ul class="carousel-indicators">
-                <li data-target="#slide" data-slide-to="0" class="active"></li>
-                <li data-target="#slide" data-slide-to="1"></li>
-                <li data-target="#slide" data-slide-to="2"></li>
-            </ul>
+                <li class="item1 active"></li>
+                <li class="item2"></li>
+                <li class="item3"></li>
+                <li class="item4"></li>
+              </ul>
 
             <!-- The slideshow -->
             <div class="carousel-inner">
